@@ -20,7 +20,7 @@ import Link from "next/link";
 import { handleGetItems } from "@/utils/items/getItems";
 
 
-const getStarted = () => {
+const Items = () => {
   const [myCustomers, setmyCustomers] = useState([]);
   useEffect(() => {
     handleGetItems()
@@ -172,4 +172,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default Items;

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-const manageOrganisation = () => {
+const ManageOrganisation = () => {
   const router = useRouter();
   const [myOrganizations, setmyOrganizations] = useState([]);
   useEffect(() => {
@@ -168,4 +168,4 @@ const manageOrganisation = () => {
   );
 };
 
-export default manageOrganisation;
+export default ManageOrganisation;

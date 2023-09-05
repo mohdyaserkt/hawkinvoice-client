@@ -19,7 +19,7 @@ import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 
-const getStarted = () => {
+const AddNewItem = () => {
   const router = useRouter();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -256,4 +256,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default AddNewItem;

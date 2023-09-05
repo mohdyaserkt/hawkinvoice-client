@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 
-const getStarted = () => {
+const AddOrganization = () => {
   const [organizationState, setorganizationState] = HandleForm({
     businessName: "",
     typeOfbusiness: "",
@@ -162,4 +162,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default AddOrganization;

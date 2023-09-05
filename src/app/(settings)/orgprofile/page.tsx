@@ -21,7 +21,7 @@ import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import { handleEditItem } from "@/utils/items/editItem";
 import { handleGetSingleItem } from "@/utils/items/getSingleItem";
 
-const getStarted = () => {
+const OrgProfile = () => {
   
 
 
@@ -129,4 +129,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default OrgProfile;

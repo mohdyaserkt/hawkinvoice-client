@@ -21,7 +21,7 @@ import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import { handleEditItem } from "@/utils/items/editItem";
 import { handleGetSingleItem } from "@/utils/items/getSingleItem";
 
-const getStarted = () => {
+const EditItem = () => {
   const params = useParams();
   const id = params.id;
   const router = useRouter();
@@ -285,4 +285,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default EditItem;
