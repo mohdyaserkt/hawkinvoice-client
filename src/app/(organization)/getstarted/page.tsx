@@ -5,7 +5,7 @@ import { ApiError } from "next/dist/server/api-utils";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-const getStarted = () => {
+const GetStarted = () => {
   const router = useRouter();
   const [isChecked, setIsChecked] = useState(false);
 
@@ -426,4 +426,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default GetStarted;
