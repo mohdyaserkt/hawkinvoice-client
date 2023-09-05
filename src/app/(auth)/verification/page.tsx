@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
 
-const verification = () => {
+const Verification = () => {
   return (
     <>
       <div className="w-screen h-screen ">
@@ -58,7 +58,7 @@ const verification = () => {
   );
 };
 
-export default verification;
+export default Verification;
 
 
 

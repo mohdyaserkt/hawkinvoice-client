@@ -20,7 +20,7 @@ import { ApiError } from "next/dist/server/api-utils";
 import { handleEditCustomer } from "@/utils/Customers/editCustomer";
 import { handleGetSingleCustomer } from "@/utils/Customers/getSingleCustomer";
 
-const getStarted = () => {
+const EditCustomer = () => {
   const params = useParams();
   const id = params.id;
   const router = useRouter();
@@ -479,4 +479,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default EditCustomer;

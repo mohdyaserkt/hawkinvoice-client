@@ -8,7 +8,7 @@ import { handleSignup } from "@/utils/Authentication/handlesignup";
 import { ApiError } from "next/dist/server/api-utils";
 
 
-export default function signup() {
+export default function Signup() {
   const router = useRouter();
   const [signupState, setSignupState] = HandleForm({ email: "", password: "" });
   console.log(signupState);

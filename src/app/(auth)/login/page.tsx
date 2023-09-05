@@ -9,7 +9,7 @@ import { useState } from "react";
 import { json } from "stream/consumers";
 
 
-export default function login() {
+export default function Login() {
   const router = useRouter();
 
   const [loginState, setLoginState] = HandleForm({ email: "", password: "" });

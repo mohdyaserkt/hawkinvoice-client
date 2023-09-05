@@ -19,7 +19,7 @@ import { handleCreateNewCustomer } from "@/utils/Customers/createNewCustomer";
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 
-const getStarted = () => {
+const NewCustomer = () => {
   const billingRef = useRef<HTMLDivElement | null>(null);
   const shippingRef = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
@@ -483,4 +483,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default NewCustomer;

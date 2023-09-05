@@ -19,7 +19,7 @@ import "./page.module.css";
 import Link from "next/link";
 import { handleGetCustomers } from "@/utils/Customers/getCustomers";
 
-const getStarted = () => {
+const Customers = () => {
   const [myCustomers, setmyCustomers] = useState([]);
   useEffect(() => {
     handleGetCustomers()
@@ -178,4 +178,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default Customers;
