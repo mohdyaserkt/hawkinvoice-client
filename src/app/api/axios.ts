@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosInstance } from "axios";
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: process.env.BASE_URL,
+  baseURL:"https://7940-103-99-204-30.ngrok-free.app",
 });
 
 axiosInstance.interceptors.request.use(
