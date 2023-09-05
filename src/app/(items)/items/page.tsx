@@ -18,6 +18,7 @@ import {
 
 import Link from "next/link";
 import { handleGetItems } from "@/utils/items/getItems";
+import Image from "next/image";
 
 
 const Items = () => {
@@ -70,11 +71,14 @@ const Items = () => {
               </select>
 
               <div className="pr-2">
-                <img
-                  src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
-                  alt="Your Alt Text"
-                  className="rounded-full w-8   h-8   "
-                />
+              <Image
+  src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
+  alt="Your Alt Text"
+  width={8}
+  height={8}
+  className="rounded-full w-8 h-8"
+/>
+
               </div>
             </div>
           </div>
@@ -98,11 +102,14 @@ const Items = () => {
               <p className="text-sm text-white">Invoices</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
-              <img
-                src="/recievedpayments.svg"
-                alt=""
-                className="w-4 h-4 ml-2 text-white"
-              />
+            <Image
+  src="/recievedpayments.svg"
+  alt=""
+  width={4}
+  height={4}
+  className="w-4 h-4 ml-2 text-white"
+/>
+
               <p className="text-sm text-white">Payments Recieved</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
