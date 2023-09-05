@@ -146,22 +146,22 @@ export default function Login() {
                   </div>
                 </label>
                 <label className="mt-px sm:text-xs md:text-sm cursor-pointer select-none font-light text-gray-950">
-                  I agree to join swift invoice's mailing list
-                </label>
+  I agree to join swift invoice&apos;s mailing list
+</label>
               </div>
 
               <button type="submit" className="border-2 border-black rounded-lg w-[22.375rem] h-[3rem] bg-black text-white font-semibold">
                 Login account
               </button>
               <div className="text-xs text-center text-gray-600 my-5">
-                <span>
-                  By clicking "Create account" or "Continue with Google",
-                  <br /> you agree to the{" "}
-                  <span className="text-blue-600  cursor-pointer">
-                    Privacy Policy
-                  </span>
-                </span>
-              </div>
+  <span>
+    By clicking &quot;Create account&quot; or &quot;Continue with Google&quot;,
+    <br /> you agree to the{" "}
+    <span className="text-blue-600  cursor-pointer">
+      Privacy Policy
+    </span>
+  </span>
+</div>
 
               <div className="text-gray-700">
                 No account?{" "}
