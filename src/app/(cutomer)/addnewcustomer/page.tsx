@@ -18,6 +18,7 @@ import {
 import { handleCreateNewCustomer } from "@/utils/Customers/createNewCustomer";
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
+import Image from "next/image";
 
 const NewCustomer = () => {
   const billingRef = useRef<HTMLDivElement | null>(null);
@@ -158,11 +159,15 @@ const NewCustomer = () => {
                 <option>Organization 3</option>
               </select>
               <div className="pr-2">
-                <img
-                  src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
-                  alt="Your Alt Text"
-                  className="rounded-full w-8   h-8   "
-                />
+                
+              <Image
+  src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
+  alt="Your Alt Text"
+  width={8}
+  height={8}
+  className="rounded-full w-8 h-8"
+/>
+
               </div>
             </div>
           </div>

@@ -119,7 +119,7 @@ export default function Signup() {
                 </div>
               </label>
               <label className="mt-px sm:text-xs md:text-sm cursor-pointer select-none font-light text-gray-950">
-                I agree to join swift invoice's mailing list
+              I agree to join swift invoice&apos;s mailing list
               </label>
             </div>
 
@@ -128,14 +128,15 @@ export default function Signup() {
             </button>
            
             <div className="text-xs text-center text-gray-600 my-5">
-              <span>
-                By clicking "Create account" or "Continue with Google",
-                <br /> you agree to the{" "}
-                <span className="text-blue-600  cursor-pointer">
-                  Privacy Policy
-                </span>
-              </span>
-            </div>
+  <span>
+    By clicking &ldquo;Create account&rdquo; or &ldquo;Continue with Google&rdquo;,
+    <br /> you agree to the{" "}
+    <span className="text-blue-600 cursor-pointer">
+      Privacy Policy
+    </span>
+  </span>
+</div>
+
 
             <div className="text-gray-700">
               already have an account?{" "}
