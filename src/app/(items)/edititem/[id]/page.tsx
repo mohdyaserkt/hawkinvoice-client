@@ -40,7 +40,7 @@ const EditItem = () => {
         console.log(err);
         alert(err);
       });
-  }, []);
+  }, [id]);
 
 
 
