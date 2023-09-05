@@ -18,13 +18,14 @@ import {
 import "./page.module.css";
 import Link from "next/link";
 import { handleGetCustomers } from "@/utils/Customers/getCustomers";
+import Image from "next/image";
 
 const Customers = () => {
   const [myCustomers, setmyCustomers] = useState([]);
   useEffect(() => {
     handleGetCustomers()
-      .then(({data}:any) => { 
-        setmyCustomers(data.customers)
+      .then(({ data }: any) => {
+        setmyCustomers(data.customers);
       })
       .catch((err) => {
         console.log(err);
@@ -32,10 +33,6 @@ const Customers = () => {
       });
   }, []);
 
-
-  
-
- 
   return (
     <>
       <div className="h-screen">
@@ -72,10 +69,12 @@ const Customers = () => {
               </select>
 
               <div className="pr-2">
-                <img
+                <Image
                   src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
                   alt="Your Alt Text"
-                  className="rounded-full w-8   h-8   "
+                  width={8}
+                  height={8}
+                  className="rounded-full w-8 h-8"
                 />
               </div>
             </div>
@@ -92,18 +91,21 @@ const Customers = () => {
               <p className="text-sm text-white">Customers</p>
             </div>
             <Link href="/items">
-            <div className="flex items-center h-7 rounded-lg space-x-2">
-              <PiHandbag className="w-4 h-4 ml-2 text-white " />
-              <p className="text-sm text-white">Items</p>
-            </div></Link>
+              <div className="flex items-center h-7 rounded-lg space-x-2">
+                <PiHandbag className="w-4 h-4 ml-2 text-white " />
+                <p className="text-sm text-white">Items</p>
+              </div>
+            </Link>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Invoices</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
-              <img
+              <Image
                 src="/recievedpayments.svg"
                 alt=""
+                width={4}
+                height={4}
                 className="w-4 h-4 ml-2 text-white"
               />
               <p className="text-sm text-white">Payments Recieved</p>
@@ -125,7 +127,9 @@ const Customers = () => {
 
               <div className="flex space-x-2">
                 <div className="text-xs bg-secondary flex items-center text-white font-semibold px-3 py-2  rounded">
-                  <Link href='/addnewcustomer'><span className="mr-1">+</span> New</Link>
+                  <Link href="/addnewcustomer">
+                    <span className="mr-1">+</span> New
+                  </Link>
                 </div>
                 <div className="p-2 bg-white rounded">
                   <SlOptions className="w-4 h-4 text-gray-800 " />
@@ -153,15 +157,20 @@ const Customers = () => {
                 </tr>
               </thead>
               <tbody className="text-white text-sm">
-              {myCustomers.map((item: any) => (
-                <tr className="border-b border-white" key={item.id}>
-                  <td className="p-2 text-center">{item.displayName}</td>
-                  <td className="p-2 text-center">{item.customerCompanyName}</td>
-                  <td className="p-2 text-center">{item.email}</td>
-                  <td className="p-2 text-center">{item.workPhone}</td>
-                  <td className="p-2 text-center">₹0.00</td>
-                  <Link href={`/editcustomer/${item.id}`}><td className="p-2 text-center">edit</td></Link>
-                </tr>))} 
+                {myCustomers.map((item: any) => (
+                  <tr className="border-b border-white" key={item.id}>
+                    <td className="p-2 text-center">{item.displayName}</td>
+                    <td className="p-2 text-center">
+                      {item.customerCompanyName}
+                    </td>
+                    <td className="p-2 text-center">{item.email}</td>
+                    <td className="p-2 text-center">{item.workPhone}</td>
+                    <td className="p-2 text-center">₹0.00</td>
+                    <Link href={`/editcustomer/${item.id}`}>
+                      <td className="p-2 text-center">edit</td>
+                    </Link>
+                  </tr>
+                ))}
                 <tr className="border-b border-white">
                   <td className="p-2 text-center">jlo</td>
                   <td className="p-2 text-center">helo@ha.ls</td>
