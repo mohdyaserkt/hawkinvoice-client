@@ -35,7 +35,7 @@ const GetStarted = () => {
   useEffect(() => {
     GetInvoices();
     getMainInvoice(id as string);
-  }, []);
+  }, [id]);
 
   console.log(mainInvoice, "thisis main");
 
@@ -213,7 +213,7 @@ const GetStarted = () => {
                 </div>
                 <div>
                   {myInvoices.map((item: IInvoice, index) => (
-                    <div>
+                    <div key={index}>
                       <div className="flex h-16 py-2 pe-1 ps-2 border-b">
                         <div>
                           <input type="checkbox" className="mx-2" />
