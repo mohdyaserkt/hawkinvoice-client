@@ -20,6 +20,7 @@ import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import { handleCreateNewExpense } from "@/utils/Expense/createNewExpense";
 import { IExpense } from "../../../../types/Expense/createNewExpense";
+import Image from "next/image";
 
 const GetStarted = () => {
   const router = useRouter();
@@ -93,7 +94,7 @@ const GetStarted = () => {
                 <option>Organization 3</option>
               </select>
               <div className="pr-2">
-                <img
+                <Image
                   src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
                   alt="Your Alt Text"
                   className="rounded-full w-8   h-8   "
@@ -121,7 +122,7 @@ const GetStarted = () => {
               <p className="text-sm text-white">Invoices</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
-              <img
+              <Image
                 src="/recievedpayments.svg"
                 alt=""
                 className="w-4 h-4 ml-2 text-white"
