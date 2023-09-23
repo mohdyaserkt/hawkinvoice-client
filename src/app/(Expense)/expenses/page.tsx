@@ -161,9 +161,9 @@ const GetStarted = () => {
                       {formatDate(item.date)}
                     </td>
                     <td className="p-2 text-center">{item.categoryName}</td>
-                    <td className="p-2 text-center">₹ {item.invoiceNumber}</td>
+                    <td className="p-2 text-center">#{item.invoiceNumber}</td>
                     <td className="p-2 text-center">NON BILLABLE</td>
-                    <td className="p-2 text-center">{item.amount}</td>
+                    <td className="p-2 text-center">₹ {item.amount}</td>
                     
                   </tr>
                 ))}

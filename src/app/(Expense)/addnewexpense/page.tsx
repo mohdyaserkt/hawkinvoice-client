@@ -30,7 +30,7 @@ const GetStarted = () => {
   } | null>({ field: "", errors: [""] });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();             
+    e.preventDefault();
     const formData = new FormData(e.currentTarget);
     let inputObject: { [key: string]: string | Number | object } = {};
 
@@ -109,7 +109,7 @@ const GetStarted = () => {
               <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Home</p>
             </div>
-            <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
+            <div className="flex items-center h-7 rounded-lg space-x-2">
               <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Customers</p>
             </div>
@@ -129,7 +129,7 @@ const GetStarted = () => {
               />
               <p className="text-sm text-white">Payments Recieved</p>
             </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
+            <div className="flex items-center h-7  bg-secondary rounded-lg space-x-2">
               <TbReceipt className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Expenses</p>
             </div>
@@ -141,7 +141,7 @@ const GetStarted = () => {
           <div className="w-full">
             <div className="p-5 flex justify-between w-full border-r-[1px] border-b-[1px] ">
               <div className="text-white">
-                <h2 className="text-xl">New Item</h2>
+                <h2 className="text-xl">New Expense</h2>
               </div>
             </div>
 
@@ -175,9 +175,34 @@ const GetStarted = () => {
                           name="categoryName"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2 bg-white"
                         >
-                          <option value="df">fires</option>
-                          <option value="ds">dskf</option>
-                          <option value="dss">dss</option>
+                          <option value="Automobile Expense">
+                            Automobile Expense
+                          </option>
+                          <option value="Consultant Expense">
+                            Consultant Expense
+                          </option>
+                          <option value="Contract Assets">
+                            Contract Assets
+                          </option>
+                          <option value="Credit Card Charges">
+                            Credit Card Charges
+                          </option>
+                          <option value="Depreciation And Amortisation">
+                            Depreciation And Amortisation
+                          </option>
+                          <option value="Depreciation Expense">
+                            Depreciation Expense
+                          </option>
+                          <option value="IT and Internet Expenses">
+                            IT and Internet Expenses
+                          </option>
+                          <option value="Job Costing">Job Costing</option>
+                          <option value="Labor">Labor</option>
+                          <option value="Materials">Materials</option>
+                          <option value="Subcontractor">Subcontractor</option>
+                          <option value="Advertising And Marketing">
+                            Advertising And Marketing
+                          </option>
                         </select>
                       </div>
                     </div>
@@ -206,7 +231,7 @@ const GetStarted = () => {
                         <input
                           name="invoiceNumber"
                           className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
-                          type="number"
+                          type="text"
                           placeholder="INR"
                         />
                       </div>

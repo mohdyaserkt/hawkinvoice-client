@@ -2,7 +2,7 @@ export interface IExpense {
     date: Date;
     categoryName: string;
     amount: number;
-    invoiceNumber?: number;
+    invoiceNumber?: string;
     notes?: string;
     id?: string;
   }
@@ -14,7 +14,7 @@ export interface IExpense {
         date: Date;
         categoryName: string;
         amount: number;
-        invoiceNumber?: number;
+        invoiceNumber?: string;
         notes?: string;
         id?: string;
     };
