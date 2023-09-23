@@ -24,7 +24,8 @@ import { IInvoice } from "../../../../types/invoice/createinvoice";
 import { handleGetExpenses } from "@/utils/Expense/getallExpenses";
 import { IExpense } from "../../../../types/Expense/createNewExpense";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+
 
 const GetStarted = () => {
   const router=useRouter()
