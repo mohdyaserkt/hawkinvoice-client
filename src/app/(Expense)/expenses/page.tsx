@@ -156,6 +156,9 @@ const GetStarted = () => {
                   <th className="border-b border-white p-2 text-center">
                     Amount
                   </th>
+                  <th>
+
+                  </th>
                 </tr>
               </thead>
               <tbody className="text-white text-sm">
@@ -167,7 +170,8 @@ const GetStarted = () => {
                     <td className="p-2 text-center">{item.categoryName}</td>
                     <td className="p-2 text-center">#{item.invoiceNumber}</td>
                     <td className="p-2 text-center">NON BILLABLE</td>
-                    <td className="p-2 text-center">₹ {item.amount} <span onClick={()=>{router.push(`/editexpense/${item.id}`)}}><BiEditAlt/></span></td>
+                    <td className="p-2 text-center">₹ {item.amount} </td>
+                    <td><span className="cursor-pointer" onClick={()=>{router.push(`/editexpense/${item.id}`)}}><BiEditAlt size={24}/></span></td>
                     
                   </tr>
                 ))}
