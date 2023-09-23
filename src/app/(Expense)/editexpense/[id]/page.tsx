@@ -20,9 +20,11 @@ import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import { handleCreateNewExpense } from "@/utils/Expense/createNewExpense";
 import { IExpense } from "../../../../../types/Expense/createNewExpense";
-import { handleGetExpenseById } from "@/utils/Expense/getExpenseById";
+
 import { formatDate } from "@/utils/Invoice/getInvoices";
+import { handleGetExpenseById } from "@/utils/Expense/getExpenseById";
 import { handleEditExpense } from "@/utils/Expense/editExpense";
+
 
 const GetStarted = () => {
   const params = useParams();
@@ -161,7 +163,7 @@ const GetStarted = () => {
           <div className="w-full">
             <div className="p-5 flex justify-between w-full border-r-[1px] border-b-[1px] ">
               <div className="text-white">
-                <h2 className="text-xl">New Item</h2>
+                <h2 className="text-xl">Edit Expense</h2>
               </div>
             </div>
 
@@ -200,9 +202,34 @@ const GetStarted = () => {
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2 bg-white"
                           defaultValue={editexpense?.categoryName}
                         >
-                          <option value="df">fires</option>
-                          <option value="ds">dskf</option>
-                          <option value="dss">dss</option>
+                          <option value="Automobile Expense">
+                            Automobile Expense
+                          </option>
+                          <option value="Consultant Expense">
+                            Consultant Expense
+                          </option>
+                          <option value="Contract Assets">
+                            Contract Assets
+                          </option>
+                          <option value="Credit Card Charges">
+                            Credit Card Charges
+                          </option>
+                          <option value="Depreciation And Amortisation">
+                            Depreciation And Amortisation
+                          </option>
+                          <option value="Depreciation Expense">
+                            Depreciation Expense
+                          </option>
+                          <option value="IT and Internet Expenses">
+                            IT and Internet Expenses
+                          </option>
+                          <option value="Job Costing">Job Costing</option>
+                          <option value="Labor">Labor</option>
+                          <option value="Materials">Materials</option>
+                          <option value="Subcontractor">Subcontractor</option>
+                          <option value="Advertising And Marketing">
+                            Advertising And Marketing
+                          </option>
                         </select>
                       </div>
                     </div>

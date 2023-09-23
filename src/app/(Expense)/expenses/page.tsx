@@ -6,6 +6,7 @@ import {
 import { MdRefresh } from "react-icons/md";
 import { PiHandbag } from "react-icons/pi";
 import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
+import {BiEditAlt} from "react-icons/bi";
 import { TbReceipt } from "react-icons/tb";
 import { SlOptions } from "react-icons/sl";
 import {
@@ -23,8 +24,10 @@ import { IInvoice } from "../../../../types/invoice/createinvoice";
 import { handleGetExpenses } from "@/utils/Expense/getallExpenses";
 import { IExpense } from "../../../../types/Expense/createNewExpense";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const GetStarted = () => {
+  const router=useRouter()
   const [myExpenses, setmyExpenses] = useState([]);
   useEffect(() => {
     handleGetExpenses()
@@ -163,7 +166,7 @@ const GetStarted = () => {
                     <td className="p-2 text-center">{item.categoryName}</td>
                     <td className="p-2 text-center">#{item.invoiceNumber}</td>
                     <td className="p-2 text-center">NON BILLABLE</td>
-                    <td className="p-2 text-center">₹ {item.amount}</td>
+                    <td className="p-2 text-center">₹ {item.amount} <span onClick={()=>{router.push(`/editexpense/${item.id}`)}}><BiEditAlt/></span></td>
                     
                   </tr>
                 ))}
