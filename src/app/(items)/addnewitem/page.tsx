@@ -223,7 +223,7 @@ const AddNewItem = () => {
                         <input
                           className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                           type="number"
-                          placeholder="INR"
+                          placeholder=""
                         />
                       </div>
                     </div>
