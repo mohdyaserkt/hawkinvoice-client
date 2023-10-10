@@ -729,7 +729,7 @@ const GetStarted = () => {
                       <div className="flex gap-1  items-center mt-8 ">
                         <p className="text-base">Note:</p>
                         <p className="text-[14px]">
-                          ₹{mainInvoice?.termsAndConditions} Thank You!
+                          ₹{mainInvoice?.termsAndConditions}
                         </p>
                       </div>
                     </div>

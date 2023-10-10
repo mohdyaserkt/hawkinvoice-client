@@ -480,6 +480,7 @@ const GetStarted = () => {
                           <p className="text-xs">Customer Notes</p>
                           <textarea
                             name="customerNotes"
+                            defaultValue="Thanks for your business"
                             className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"
                           ></textarea>
                         </div>
@@ -487,6 +488,9 @@ const GetStarted = () => {
                           <p className="text-xs">Terms and Conditions</p>
                           <textarea
                             name="termsAndConditions"
+                            defaultValue="It was a pleasure working with you and your team. We
+                                         hope you will keep us in mind for future freelance
+                                         projects. Thank You!"
                             className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"
                             placeholder="Enter the terms and conditions of your business to be displayed in your transaction"
                           ></textarea>
