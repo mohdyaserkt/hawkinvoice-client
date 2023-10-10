@@ -221,7 +221,9 @@ const GetStarted = () => {
                         <div className="flex justify-between w-full ">
                           <div className="  flex flex-col justify-center text-white">
                             <div className="flex flex-col ">
-                            <Link href={`/allinvoices/${item.id}`}><h3 className="text-sm">{item.customerName}</h3></Link>
+                              <Link href={`/allinvoices/${item.id}`}>
+                                <h3 className="text-sm">{item.customerName}</h3>
+                              </Link>
                               <div className="flex gap-2 text-[13px] items-center">
                                 <p className="">{item.invoiceNumber}</p>
                                 <p>|</p>
@@ -250,16 +252,16 @@ const GetStarted = () => {
                   ))}
                 </div>
               </div>
-              <div ref={printableRef} className="w-full">
+
+              {/* <div ref={printableRef} className="w-full">
                 <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto my-4 sm:my-10">
-                  {/* Grid */}
                   <div className="mb-5 pb-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
                     <div>
                       <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">
                         Invoice
                       </h2>
                     </div>
-                    {/* Col */}
+
                     <div className="inline-flex gap-x-2">
                       <a
                         className="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
@@ -297,11 +299,8 @@ const GetStarted = () => {
                         Print
                       </a>
                     </div>
-                    {/* Col */}
                   </div>
-                  {/* End Grid */}
 
-                  {/* Grid */}
                   <div className="grid md:grid-cols-2 gap-3">
                     <div>
                       <div className="grid space-y-3">
@@ -358,7 +357,6 @@ const GetStarted = () => {
                         </dl>
                       </div>
                     </div>
-                    {/* Col */}
 
                     <div>
                       <div className="grid space-y-3">
@@ -403,11 +401,8 @@ const GetStarted = () => {
                         </dl>
                       </div>
                     </div>
-                    {/* Col */}
                   </div>
-                  {/* End Grid */}
 
-                  {/* Table */}
                   <div className="mt-6 border border-gray-200 p-4 rounded-lg space-y-4 dark:border-gray-700">
                     <div className="hidden sm:grid sm:grid-cols-5">
                       <div className="sm:col-span-2 text-xs font-medium text-gray-500 uppercase">
@@ -469,24 +464,21 @@ const GetStarted = () => {
                       </>
                     ))}
                   </div>
-                  {/* End Table */}
 
-                  {/* Flex */}
                   <div className="mt-8 flex sm:justify-end">
                     <div className="w-full max-w-2xl sm:text-right space-y-2">
-                      {/* Grid */}
                       <div className="grid grid-cols-2 sm:grid-cols-1 gap-3 sm:gap-2">
                         <dl className="grid sm:grid-cols-5 gap-x-3 text-sm">
                           <dt className="col-span-3 text-gray-500">Subotal:</dt>
                           <dd className="col-span-2 font-medium text-gray-800 dark:text-gray-200">
-                          ₹{mainInvoice?.subTotal}
+                            ₹{mainInvoice?.subTotal}
                           </dd>
                         </dl>
 
                         <dl className="grid sm:grid-cols-5 gap-x-3 text-sm">
                           <dt className="col-span-3 text-gray-500">Total:</dt>
                           <dd className="col-span-2 font-medium text-gray-800 dark:text-gray-200">
-                          ₹{mainInvoice?.Total}
+                            ₹{mainInvoice?.Total}
                           </dd>
                         </dl>
 
@@ -495,7 +487,8 @@ const GetStarted = () => {
                             Amount paid:
                           </dt>
                           <dd className="col-span-2 font-medium text-gray-800 dark:text-gray-200">
-                          ₹{mainInvoice?.status == "paid"
+                            ₹
+                            {mainInvoice?.status == "paid"
                               ? mainInvoice?.Total
                               : 0.0}
                           </dd>
@@ -506,16 +499,241 @@ const GetStarted = () => {
                             Due balance:
                           </dt>
                           <dd className="col-span-2 font-medium text-gray-800 dark:text-gray-200">
-                          ₹{mainInvoice?.status == "paid"
+                            ₹
+                            {mainInvoice?.status == "paid"
                               ? 0
-                              : mainInvoice?.Total}.00
+                              : mainInvoice?.Total}
+                            .00
                           </dd>
                         </dl>
                       </div>
-                      {/* End Grid */}
                     </div>
                   </div>
-                  {/* End Flex */}
+                </div>
+              </div> */}
+
+              <div
+                ref={printableRef}
+                className="w-full overflow-y-auto"
+                style={{ maxHeight: "calc(100vh - 47px)" }}
+              >
+                <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto my-4 sm:my-10 flex justify-center items-center">
+                  <div className="bg-white rounded-xl w-[1035px] text-gray-900 p-8">
+                    <div className="flex justify-between border-b">
+                      <div className="mb-6">
+                        <div className="flex items-center">
+                          <Image
+                            className="rounded-xl"
+                            width={80}
+                            height={80}
+                            src={
+                              "https://img.freepik.com/free-vector/abstract-logo-flame-shape_1043-44.jpg"
+                            }
+                            alt={"logo"}
+                          ></Image>
+                          <h2 className="text-2xl">Organisation Name</h2>
+                        </div>
+                        <div className="text-[15px]">
+                          <p>Office 149, 450 South Brand Brooklyn</p>
+                          <p>San Diego County, CA 91905, USA</p>
+                          <p>+1 (123) 456 7891, +44 (876) 543 2198</p>
+                        </div>
+                      </div>
+                      <div className="flex flex-col gap-[6px]">
+                        <h1 className="font-semibold text-[22px]">
+                          Invoice #{mainInvoice?.invoiceNumber}
+                        </h1>
+                        <div className="flex flex-col  text-[15px]">
+                          <p>
+                            Date Issues:
+                            {formatDate(
+                              mainInvoice?.invoiceDate
+                                ? mainInvoice.invoiceDate
+                                : new Date()
+                            )}
+                          </p>
+                          <p>
+                            Date Due:{" "}
+                            {formatDate(
+                              mainInvoice?.dueDate
+                                ? mainInvoice.dueDate
+                                : new Date()
+                            )}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-60 my-8">
+                      <div className="flex flex-col gap-3">
+                        <div>
+                          <h1 className="text-[15px]">Invoice To:</h1>
+                        </div>
+                        <div className="text-sm flex flex-col gap-1">
+                          <p>{mainInvoice?.customerName}</p>
+                          <p>Shelby Company Limited</p>
+                          <p>Small Heath, B10 0HF, UK</p>
+                          <p>718-986-6062</p>
+                          <p>{mainInvoice?.customerEmail}</p>
+                        </div>
+                      </div>
+                      <div className="flex flex-col gap-3">
+                        <div>
+                          <h1 className="text-[15px]">Bill To:</h1>
+                        </div>
+                        <div className="text-sm flex gap-5">
+                          <div className="flex flex-col gap-1">
+                            <p>Total Due:</p>
+                            {/* <p>Bank name:</p>
+                            <p>Country:</p>
+                            <p>IBAN:</p>
+                            <p>SWIFT code:</p> */}
+                          </div>
+                          <div className="flex flex-col gap-1">
+                            <p>
+                              ₹
+                              {mainInvoice?.status == "paid"
+                                ? 0
+                                : mainInvoice?.Total}
+                              .00
+                            </p>
+                            {/* <p>American Bank</p>
+                            <p>United States</p>
+                            <p>ETD95476213874685</p>
+                            <p>BR91905</p> */}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <table className="min-w-full">
+                        <thead className="text-xs">
+                          <tr>
+                            <th className="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                              ITEM
+                            </th>
+                            {/* <th className="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                              DESCRIPTION
+                            </th> */}
+                            <th className="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                              COST
+                            </th>
+                            <th className="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                              QTY
+                            </th>
+                            <th className="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                              PRICE
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody className="bg-white text-[15px]">
+                          {mainInvoice?.itemDetails.map((item, index) => (
+                            <tr key={item.id}>
+                              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                {item.itemName}
+                              </td>
+                              {/* <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              HTML Admin Template
+                            </td> */}
+                              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                ₹{item.rate}
+                              </td>
+                              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                {item.quantity}
+                              </td>
+                              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                ₹{item.quantity * item.rate}
+                              </td>
+                            </tr>
+                          ))}
+                          {/* <tr>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              Frest Admin Template
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              Angular Admin Template
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              $22
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              1
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              $22.00
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              Apex Admin Template
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              HTML Admin Template
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              $17
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              2
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              $34.00
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              Robust Admin Template
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              React Admin Template
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              $66
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              1
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              $66.00
+                            </td>
+                          </tr> */}
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="flex justify-between my-8 ">
+                      <div className="text-[15px] flex flex-col gap-2">
+                        <div className="flex gap-1">
+                          <p>Salesperson:</p>
+                          <p>{mainInvoice?.salesPerson}</p>
+                        </div>
+                        <div>
+                          <p>{mainInvoice?.customerNotes}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-10 mr-[51px]">
+                        <div className="flex flex-col gap-2 text-sm">
+                          <p>Subtotal:</p>
+                          <p>Discount:</p>
+                          {/* <p>Tax:</p> */}
+                          <p>Total:</p>
+                        </div>
+                        <div className="flex flex-col gap-2 text-sm">
+                          <p> ₹{mainInvoice?.subTotal}</p>
+                          <p>₹{mainInvoice?.discount}</p>
+                          {/* <p>$50.00</p> */}
+                          <p>₹{mainInvoice?.Total}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="border-t items-center ">
+                      <div className="flex gap-1  items-center mt-8 ">
+                        <p className="text-base">Note:</p>
+                        <p className="text-[14px]">
+                          ₹{mainInvoice?.termsAndConditions} Thank You!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
