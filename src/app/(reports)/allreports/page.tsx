@@ -20,7 +20,7 @@ import {
 } from "react-icons/ai";
 import Link from "next/link";
 
-const getStarted = () => {
+const AllReports = () => {
   return (
     <>
       <div className="h-screen">
@@ -197,4 +197,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default AllReports;

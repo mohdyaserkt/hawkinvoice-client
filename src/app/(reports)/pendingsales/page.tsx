@@ -22,7 +22,7 @@ import {
 import { formatDate } from "@/utils/Invoice/getInvoices";
 import { handleGetPendingSalesDetails } from "@/utils/reports/getPendingSalesDetails";
 
-const getStarted = () => {
+const PendingSales = () => {
   const [pendingSales, setpendingSales] = useState<any>([]);
 
   useEffect(() => {
@@ -212,4 +212,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default PendingSales;

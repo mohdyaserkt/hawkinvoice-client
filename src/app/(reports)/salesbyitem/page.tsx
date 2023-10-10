@@ -20,7 +20,7 @@ import {
 } from "react-icons/ai";
 import { handleGetSalesByItem } from "@/utils/reports/getSalesByItem";
 
-const getStarted = () => {
+const SalesByItem = () => {
 
   const [SalesByItem, setSalesByItem] = useState<any>([]);
 
@@ -192,4 +192,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default SalesByItem;

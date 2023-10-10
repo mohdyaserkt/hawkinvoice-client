@@ -23,7 +23,7 @@ import { formatDate } from "@/utils/Invoice/getInvoices";
 
 import { handleGetExpenseDetails } from "@/utils/reports/getExpenseDetails";
 
-const getStarted = () => {
+const ExpenseDetails = () => {
   const [expenseDetails, setexpenseDetails] = useState<any>([]);
 
   useEffect(() => {
@@ -216,4 +216,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default ExpenseDetails;

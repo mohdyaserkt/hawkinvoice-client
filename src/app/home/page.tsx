@@ -21,7 +21,7 @@ import ChartComponent from "@/components/home/chart";
 import PieChart from "@/components/home/pichart";
 import ExpensePieChart from "@/components/home/pichart";
 
-const getStarted = () => {
+const Home = () => {
   const router = useRouter();
   return (
     <>
@@ -301,4 +301,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default Home;

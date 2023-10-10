@@ -23,7 +23,7 @@ import { formatDate } from "@/utils/Invoice/getInvoices";
 import { handleGetPendingSalesDetails } from "@/utils/reports/getPendingSalesDetails";
 import { handleGetRecievedPayments } from "@/utils/reports/getRecievedPayments";
 
-const getStarted = () => {
+const Recievedpayments = () => {
   const [recievedpayments, setRecievedpayments] = useState<any>([]);
 
   useEffect(() => {
@@ -219,4 +219,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default Recievedpayments;
