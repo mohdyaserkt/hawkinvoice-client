@@ -187,7 +187,7 @@ const ExpenseDetails = () => {
                         key={index as unknown as string}
                         className="border-b border-white"
                       >
-                        <td className="p-2 text-center text-gray-600">
+                        <td className="p-2 text-center text-gray-400">
                           NON BILLABLE
                         </td>
                         <td className="p-2 text-center">
@@ -198,10 +198,10 @@ const ExpenseDetails = () => {
                         </td>
 
                         <td className="p-2 text-center">
-                          {formatDate(item.categoryName)}
+                          {item.categoryName}
                         </td>
                         <td className="p-2 text-center">
-                          ₹ {formatDate(item.amount)}
+                          ₹ {item.amount}
                         </td>
                       </tr>
                     ))}

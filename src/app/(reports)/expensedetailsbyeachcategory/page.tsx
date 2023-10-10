@@ -187,10 +187,10 @@ const ExpenseDetails = () => {
                         <td className="p-2 text-center">{item.expenseCount}</td>
 
                         <td className="p-2 text-center">
-                          {formatDate(item.categoryName)}
+                          {item.categoryName}
                         </td>
                         <td className="p-2 text-center">
-                          ₹ {formatDate(item.totalAmount)}
+                          ₹ {item.totalAmount}
                         </td>
                       </tr>
                     ))}
