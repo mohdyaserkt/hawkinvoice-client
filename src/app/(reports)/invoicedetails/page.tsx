@@ -189,8 +189,8 @@ const InvoiceDetails = () => {
                       <td className="p-2 text-center">₹ {item.invoiceNumber}</td>
                       <td className="p-2 text-center">₹ {item.orderNumber}</td>
                       <td className="p-2 text-center">₹ {formatDate(item.dueDate)}</td>
-                      <td className="p-2 text-center">₹ {formatDate(item.customerName)}</td>
-                      <td className="p-2 text-center">₹ {formatDate(item.Total)}</td>
+                      <td className="p-2 text-center">₹ {item.customerName}</td>
+                      <td className="p-2 text-center">₹ {item.Total}</td>
                     </tr>
                    ))}
                     
