@@ -129,15 +129,15 @@ months.forEach(month => {
       <div className="w-[200px] h-72 border-s text-white flex flex-col gap-4 justify-center items-center">
         <div className="flex flex-col justify-end">
           <p className="text-[13px] text-[#2C8FF6]">Total Sales</p>
-          <h1 className="text-[19px]">₹{chartData?.totalSales?.totalSum||0}.00</h1>
+          <h1 className="text-[19px]">₹{chartData?.totalSales[0]?.totalSum||0}.00</h1>
         </div>
         <div className="flex flex-col justify-end">
           <p className="text-[13px] text-[#35BD7A]">Total Receipts</p>
-          <h1 className="text-[19px]">₹{chartData?.totalReceipts?.totalSum||0}.00</h1>
+          <h1 className="text-[19px]">₹{chartData?.totalReceipts[0]?.totalSum||0}.00</h1>
         </div>
         <div className="flex flex-col justify-end">
           <p className="text-[13px] text-[#F8612B]">Total Expenses</p>
-          <h1 className="text-[19px]">₹{chartData?.totalExpenses?.totalSum||0}.00</h1>
+          <h1 className="text-[19px]">₹{chartData?.totalExpenses[0]?.totalSum||0}.00</h1>
         </div>
       </div>
     </div>
