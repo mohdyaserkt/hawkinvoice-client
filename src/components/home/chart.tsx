@@ -49,8 +49,8 @@ if (isBeforeApril1) {
 const data = [["Month", " ", "", ""]];
 
 months.forEach(month => {
-  const salesData = chartData.salesDataOfFinancialYear.find((entry: { month: string; }) => entry.month === month);
-  const expenseData = chartData.expenseDataOfFinancialYear.find((entry: { month: string; }) => entry.month === month);
+  const salesData = chartData?.salesDataOfFinancialYear.find((entry: { month: string; }) => entry.month === month);
+  const expenseData = chartData?.expenseDataOfFinancialYear.find((entry: { month: string; }) => entry.month === month);
 
   const rowData = [
     { v: month, f: month },
