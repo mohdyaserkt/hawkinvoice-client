@@ -137,7 +137,7 @@ months.forEach(month => {
         </div>
         <div className="flex flex-col justify-end">
           <p className="text-[13px] text-[#F8612B]">Total Expenses</p>
-          <h1 className="text-[19px]">₹{chartData?.totalExpenses[0]?.totalSum||0}.00</h1>
+          <h1 className="text-[19px]">₹{chartData?.totalExpenses[0]?.totalAmount||0}.00</h1>
         </div>
       </div>
     </div>
