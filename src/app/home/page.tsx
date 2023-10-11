@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   LiaFileInvoiceDollarSolid,
   LiaFileInvoiceSolid,
@@ -20,9 +20,49 @@ import Image from "next/image";
 import ChartComponent from "@/components/home/chart";
 import PieChart from "@/components/home/pichart";
 import ExpensePieChart from "@/components/home/pichart";
+import { handleGetAllRecievables } from "@/utils/home/getAllRecievable";
+import { handleGetSalesTableData } from "@/utils/home/getSalesTableData";
 
 const Home = () => {
   const router = useRouter();
+
+
+  const [allRecievables, setallRecievables] = useState<any>();
+  const [salesTable, setsalesTable] = useState<any>();
+   
+
+  useEffect(() => {
+    getData()
+
+  }, []);
+
+
+
+
+  const getData=()=>{
+
+    handleGetAllRecievables()
+      .then(({ data }: any) => {
+        setallRecievables(data.allRecievables);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+
+
+
+      handleGetSalesTableData()
+      .then(({ data }: any) => {
+        setsalesTable(data.tableData);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+
+
+  }
   return (
     <>
       <div className="h-screen">
@@ -131,7 +171,7 @@ const Home = () => {
                 <div className="w-full h-[67px]  border-b border-x py-2">
                   <div className="relative pt-1 px-2 flex flex-col gap-1">
                     <p className="text-[10px] text-secondary">
-                      Total Receivables ₹3,550.00
+                      Total Receivables ₹{allRecievables?.allrecievables[0]?.totalSum||0}.00
                     </p>
                     <div className="overflow-hidden h-3 mb-4 text-xs flex rounded bg-amber-200">
                       <div
@@ -154,26 +194,26 @@ const Home = () => {
                   <div className="border-e pr-6">
                     <div className="">
                       <p className="text-xs text-white">CURRENT</p>
-                      <h3 className="text-white text-xl">₹0.00</h3>
+                      <h3 className="text-white text-xl">₹{allRecievables?.allrecievables[0]?.totalSum||0}.00</h3>
                     </div>
                   </div>
                   <div>
                     <p className="text-xs text-white">OVERDUE</p>
-                    <h3 className="text-white text-xl">₹0.00</h3>
+                    <h3 className="text-white text-xl">₹{allRecievables?.overdueOneToFifteenDays||0}.00</h3>
                     <p className="text-secondary text-xs">1-15 Days</p>
                   </div>
                   <div className="">
-                    <h3 className="text-white text-xl">₹0.00</h3>
+                    <h3 className="text-white text-xl">₹{allRecievables?.overdueSixteenToThirtyDays||0}.00</h3>
                     <p className="text-secondary text-xs">16-30 Days</p>
                   </div>
 
                   <div>
-                    <h3 className="text-white text-xl">₹0.00</h3>
-                    <p className="text-secondary text-xs">Above 45 days</p>
+                    <h3 className="text-white text-xl">₹{allRecievables?.overdueThirtyOneToFortyFiveDays||0}.00</h3>
+                    <p className="text-secondary text-xs">31-45 days</p>
                   </div>
 
                   <div>
-                    <h3 className="text-white text-xl">₹0.00</h3>
+                    <h3 className="text-white text-xl">₹{allRecievables?.overdueAboveFortyFiveDays||0}.00</h3>
                     <p className="text-secondary text-xs">Above 45 days</p>
                   </div>
                 </div>
@@ -258,33 +298,33 @@ const Home = () => {
                       <tbody className="text-[#408DFB] text-center ">
                         <tr className="mb-5">
                           <td className="text-start">Today</td>
-                          <td>₹0.00</td>
-                          <td>₹0.00</td>
-                          <td>₹0.00</td>
+                          <td>₹{salesTable?.todaysData?.totalSales||0}.00</td>
+                          <td>₹{salesTable?.todaysData?.totalReciepts||0}.00</td>
+                          <td>₹{salesTable?.todaysData?.totalDues||0}.00</td>
                         </tr>
                         <tr className="mb-5">
                           <td className="text-start">This Week</td>
-                          <td>₹0.00</td>
-                          <td>₹0.00</td>
-                          <td>₹0.00</td>
+                          <td>₹{salesTable?.thisWeekData?.totalSales||0}.00</td>
+                          <td>₹{salesTable?.thisWeekData?.totalReciepts||0}.00</td>
+                          <td>₹{salesTable?.thisWeekData?.totalDues||0}.00</td>
                         </tr>
                         <tr className="mb-5">
                           <td className="text-start">This Month</td>
-                          <td>₹0.00</td>
-                          <td>₹0.00</td>
-                          <td>₹0.00</td>
+                          <td>₹{salesTable?.thisMonthData?.totalSales||0}.00</td>
+                          <td>₹{salesTable?.thisMonthData?.totalReciepts||0}.00</td>
+                          <td>₹{salesTable?.thisMonthData?.totalDues||0}.00</td>
                         </tr>
                         <tr className="mb-5">
                           <td className="text-start">This Quarter</td>
-                          <td>₹0.00</td>
-                          <td>₹0.00</td>
-                          <td>₹0.00</td>
+                          <td>₹{salesTable?.thisQuarterData?.totalSales||0}.00</td>
+                          <td>₹{salesTable?.thisQuarterData?.totalReciepts||0}.00</td>
+                          <td>₹{salesTable?.thisQuarterData?.totalDues||0}.00</td>
                         </tr>
                         <tr className="mb-5">
                           <td className="text-start">This Year</td>
-                          <td>₹32,535.00</td>
-                          <td>₹28,985.00</td>
-                          <td>₹3,550.00</td>
+                          <td>₹{salesTable?.thisYearData?.totalSales||0}.00</td>
+                          <td>₹{salesTable?.thisYearData?.totalReciepts||0}.00</td>
+                          <td>₹{salesTable?.thisYearData?.totalDues||0}.00</td>
                         </tr>
                       </tbody>
                     </table>

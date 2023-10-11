@@ -1,7 +1,26 @@
-import React from "react";
+import { handleGetChartData } from "@/utils/home/getChartdata";
+import React, { useEffect, useState } from "react";
 import { Chart } from "react-google-charts";
 
 const ChartComponent: React.FC = () => {
+const [chartData, setchartData] = useState<any[]>([])
+
+useEffect(() => {
+  
+  handleGetChartData()
+  .then(({ data }: any) => {
+    setchartData(data.chartData);
+  })
+  .catch((err) => {
+    console.log(err);
+    alert(err);
+  });
+
+ 
+}, [])
+
+
+  
   const data = [
     ["Month", " ", "", ""],
     [{ v: "Apr2023", f:"Apr 2023" }, 32535, 28985, 24851],
