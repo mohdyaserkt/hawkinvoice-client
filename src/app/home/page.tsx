@@ -26,21 +26,14 @@ import { handleGetSalesTableData } from "@/utils/home/getSalesTableData";
 const Home = () => {
   const router = useRouter();
 
-
   const [allRecievables, setallRecievables] = useState<any>();
   const [salesTable, setsalesTable] = useState<any>();
-   
 
   useEffect(() => {
-    getData()
-
+    getData();
   }, []);
 
-
-
-
-  const getData=()=>{
-
+  const getData = () => {
     handleGetAllRecievables()
       .then(({ data }: any) => {
         setallRecievables(data.allRecievables);
@@ -50,9 +43,7 @@ const Home = () => {
         alert(err);
       });
 
-
-
-      handleGetSalesTableData()
+    handleGetSalesTableData()
       .then(({ data }: any) => {
         setsalesTable(data.tableData);
       })
@@ -60,9 +51,7 @@ const Home = () => {
         console.log(err);
         alert(err);
       });
-
-
-  }
+  };
   return (
     <>
       <div className="h-screen">
@@ -165,13 +154,17 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="pt-7 pl-16 flex flex-col gap-11 overflow-y-auto border-b" style={{ maxHeight: "calc(100vh - 136px)" }}>
+            <div
+              className="pt-7 pl-16 flex flex-col gap-11 overflow-y-auto border-b"
+              style={{ maxHeight: "calc(100vh - 136px)" }}
+            >
               <div className="h-52 w-[998px] rounded-lg">
                 <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary py"></div>
                 <div className="w-full h-[67px]  border-b border-x py-2">
                   <div className="relative pt-1 px-2 flex flex-col gap-1">
                     <p className="text-[10px] text-secondary">
-                      Total Receivables ₹{allRecievables?.allrecievables[0]?.totalSum||0}.00
+                      Total Receivables ₹
+                      {allRecievables?.allrecievables[0]?.totalSum || 0}.00
                     </p>
                     <div className="overflow-hidden h-3 mb-4 text-xs flex rounded bg-amber-200">
                       <div
@@ -194,26 +187,36 @@ const Home = () => {
                   <div className="border-e pr-6">
                     <div className="">
                       <p className="text-xs text-white">CURRENT</p>
-                      <h3 className="text-white text-xl">₹{allRecievables?.allrecievables[0]?.totalSum||0}.00</h3>
+                      <h3 className="text-white text-xl">
+                        ₹{allRecievables?.allrecievables[0]?.totalSum || 0}.00
+                      </h3>
                     </div>
                   </div>
                   <div>
                     <p className="text-xs text-white">OVERDUE</p>
-                    <h3 className="text-white text-xl">₹{allRecievables?.overdueOneToFifteenDays||0}.00</h3>
+                    <h3 className="text-white text-xl">
+                      ₹{allRecievables?.overdueOneToFifteenDays || 0}.00
+                    </h3>
                     <p className="text-secondary text-xs">1-15 Days</p>
                   </div>
                   <div className="">
-                    <h3 className="text-white text-xl">₹{allRecievables?.overdueSixteenToThirtyDays||0}.00</h3>
+                    <h3 className="text-white text-xl">
+                      ₹{allRecievables?.overdueSixteenToThirtyDays || 0}.00
+                    </h3>
                     <p className="text-secondary text-xs">16-30 Days</p>
                   </div>
 
                   <div>
-                    <h3 className="text-white text-xl">₹{allRecievables?.overdueThirtyOneToFortyFiveDays||0}.00</h3>
+                    <h3 className="text-white text-xl">
+                      ₹{allRecievables?.overdueThirtyOneToFortyFiveDays || 0}.00
+                    </h3>
                     <p className="text-secondary text-xs">31-45 days</p>
                   </div>
 
                   <div>
-                    <h3 className="text-white text-xl">₹{allRecievables?.overdueAboveFortyFiveDays||0}.00</h3>
+                    <h3 className="text-white text-xl">
+                      ₹{allRecievables?.overdueAboveFortyFiveDays || 0}.00
+                    </h3>
                     <p className="text-secondary text-xs">Above 45 days</p>
                   </div>
                 </div>
@@ -234,29 +237,8 @@ const Home = () => {
                     </option>
                   </select>
                 </div>
-                <div className="flex items-center  justify-between">
-                  <div className="w-full">
-                    <ChartComponent />
-                  </div>
-                  <div className="w-[200px] h-72 border-s text-white flex flex-col gap-4 justify-center items-center">
-                    <div className="flex flex-col justify-end">
-                      <p className="text-[13px] text-[#2C8FF6]">Total Sales</p>
-                      <h1 className="text-[19px]">₹25,450.00</h1>
-                    </div>
-                    <div className="flex flex-col justify-end">
-                      <p className="text-[13px] text-[#35BD7A]">
-                        Total Receipts
-                      </p>
-                      <h1 className="text-[19px]">₹25,450.00</h1>
-                    </div>
-                    <div className="flex flex-col justify-end">
-                      <p className="text-[13px] text-[#F8612B]">
-                        Total Expenses
-                      </p>
-                      <h1 className="text-[19px]">₹5,050.00</h1>
-                    </div>
-                  </div>
-                </div>
+
+                <ChartComponent />
               </div>
 
               <div className="mb-5 flex gap-5">
@@ -298,41 +280,61 @@ const Home = () => {
                       <tbody className="text-[#408DFB] text-center ">
                         <tr className="mb-5">
                           <td className="text-start">Today</td>
-                          <td>₹{salesTable?.todaysData?.totalSales||0}.00</td>
-                          <td>₹{salesTable?.todaysData?.totalReciepts||0}.00</td>
-                          <td>₹{salesTable?.todaysData?.totalDues||0}.00</td>
+                          <td>₹{salesTable?.todaysData?.totalSales || 0.0}</td>
+                          <td>
+                            ₹{salesTable?.todaysData?.totalReciepts || 0.0}
+                          </td>
+                          <td>₹{salesTable?.todaysData?.totalDues || 0.0}</td>
                         </tr>
                         <tr className="mb-5">
                           <td className="text-start">This Week</td>
-                          <td>₹{salesTable?.thisWeekData?.totalSales||0}.00</td>
-                          <td>₹{salesTable?.thisWeekData?.totalReciepts||0}.00</td>
-                          <td>₹{salesTable?.thisWeekData?.totalDues||0}.00</td>
+                          <td>
+                            ₹{salesTable?.thisWeekData?.totalSales || 0.0}
+                          </td>
+                          <td>
+                            ₹{salesTable?.thisWeekData?.totalReciepts || 0.0}
+                          </td>
+                          <td>₹{salesTable?.thisWeekData?.totalDues || 0.0}</td>
                         </tr>
                         <tr className="mb-5">
                           <td className="text-start">This Month</td>
-                          <td>₹{salesTable?.thisMonthData?.totalSales||0}.00</td>
-                          <td>₹{salesTable?.thisMonthData?.totalReciepts||0}.00</td>
-                          <td>₹{salesTable?.thisMonthData?.totalDues||0}.00</td>
+                          <td>
+                            ₹{salesTable?.thisMonthData?.totalSales || 0.0}
+                          </td>
+                          <td>
+                            ₹{salesTable?.thisMonthData?.totalReciepts || 0.0}
+                          </td>
+                          <td>
+                            ₹{salesTable?.thisMonthData?.totalDues || 0.0}
+                          </td>
                         </tr>
                         <tr className="mb-5">
                           <td className="text-start">This Quarter</td>
-                          <td>₹{salesTable?.thisQuarterData?.totalSales||0}.00</td>
-                          <td>₹{salesTable?.thisQuarterData?.totalReciepts||0}.00</td>
-                          <td>₹{salesTable?.thisQuarterData?.totalDues||0}.00</td>
+                          <td>
+                            ₹{salesTable?.thisQuarterData?.totalSales || 0.0}
+                          </td>
+                          <td>
+                            ₹{salesTable?.thisQuarterData?.totalReciepts || 0.0}
+                          </td>
+                          <td>
+                            ₹{salesTable?.thisQuarterData?.totalDues || 0.0}
+                          </td>
                         </tr>
                         <tr className="mb-5">
                           <td className="text-start">This Year</td>
-                          <td>₹{salesTable?.thisYearData?.totalSales||0}.00</td>
-                          <td>₹{salesTable?.thisYearData?.totalReciepts||0}.00</td>
-                          <td>₹{salesTable?.thisYearData?.totalDues||0}.00</td>
+                          <td>
+                            ₹{salesTable?.thisYearData?.totalSales || 0.0}
+                          </td>
+                          <td>
+                            ₹{salesTable?.thisYearData?.totalReciepts || 0.0}
+                          </td>
+                          <td>₹{salesTable?.thisYearData?.totalDues || 0.0}</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
-
-             
             </div>
           </div>
         </div>
