@@ -1,6 +1,7 @@
 import { handleGetChartData } from "@/utils/home/getChartdata";
 import React, { useEffect, useState } from "react";
 import { Chart } from "react-google-charts";
+import { DataRow } from "../../../types/invoice/createinvoice";
 
 const ChartComponent: React.FC = () => {
   const [chartData, setchartData] = useState<any>();
@@ -60,6 +61,18 @@ months.forEach(month => {
   data.push(rowData);
 });
 
+for (let i = 1; i < data.length; i++) {
+  const row = data[i];
+  if (row[0] && typeof row[0] === 'object') {
+    const dataRow = row[0] as DataRow;
+    // Split the 'f' value and add a space
+    const parts = dataRow.f.match(/(\D+)(\d+)/);
+    if (parts && parts.length === 3) {
+      // Modify 'f' with a space
+      dataRow.f = `${parts[1]} ${parts[2]}`;
+    }
+  }
+}
 
   // const data = [
   //   ["Month", " ", "","",],

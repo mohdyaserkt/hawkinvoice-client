@@ -282,7 +282,7 @@ const Home = () => {
                           <td className="text-start">Today</td>
                           <td>₹{salesTable?.todaysData?.totalSales || 0.0}</td>
                           <td>
-                            ₹{salesTable?.todaysData?.totalReciepts || 0.0}
+                            ₹{salesTable?.todaysData?.totalReceipts || 0.0}
                           </td>
                           <td>₹{salesTable?.todaysData?.totalDues || 0.0}</td>
                         </tr>
@@ -292,7 +292,7 @@ const Home = () => {
                             ₹{salesTable?.thisWeekData?.totalSales || 0.0}
                           </td>
                           <td>
-                            ₹{salesTable?.thisWeekData?.totalReciepts || 0.0}
+                            ₹{salesTable?.thisWeekData?.totalReceipts || 0.0}
                           </td>
                           <td>₹{salesTable?.thisWeekData?.totalDues || 0.0}</td>
                         </tr>
@@ -302,7 +302,7 @@ const Home = () => {
                             ₹{salesTable?.thisMonthData?.totalSales || 0.0}
                           </td>
                           <td>
-                            ₹{salesTable?.thisMonthData?.totalReciepts || 0.0}
+                            ₹{salesTable?.thisMonthData?.totalReceipts || 0.0}
                           </td>
                           <td>
                             ₹{salesTable?.thisMonthData?.totalDues || 0.0}
@@ -314,7 +314,7 @@ const Home = () => {
                             ₹{salesTable?.thisQuarterData?.totalSales || 0.0}
                           </td>
                           <td>
-                            ₹{salesTable?.thisQuarterData?.totalReciepts || 0.0}
+                            ₹{salesTable?.thisQuarterData?.totalReceipts || 0.0}
                           </td>
                           <td>
                             ₹{salesTable?.thisQuarterData?.totalDues || 0.0}
@@ -326,7 +326,7 @@ const Home = () => {
                             ₹{salesTable?.thisYearData?.totalSales || 0.0}
                           </td>
                           <td>
-                            ₹{salesTable?.thisYearData?.totalReciepts || 0.0}
+                            ₹{salesTable?.thisYearData?.totalReceipts || 0.0}
                           </td>
                           <td>₹{salesTable?.thisYearData?.totalDues || 0.0}</td>
                         </tr>

@@ -54,3 +54,9 @@ export interface handleCreateInvoice {
 
   setError?: (field: string, errors: string[]) => void;
 }
+
+
+export interface DataRow {
+  v: string;
+  f: string;
+}
