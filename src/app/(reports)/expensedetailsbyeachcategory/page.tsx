@@ -44,7 +44,7 @@ const ExpenseDetails = () => {
     const content = printableRef.current;
   
     if (content) {
-      const printWindow = window.open("", "", "width=1080,height=600");
+      const printWindow = window.open("", "", "");
   
       // Write the content of the target div and include the Tailwind CSS stylesheet
       printWindow?.document.open();
