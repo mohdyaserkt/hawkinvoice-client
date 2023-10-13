@@ -29,19 +29,20 @@ const ExpensePieChart = () => {
 
   const [expenseData, setexpenseData] = useState<any[]>([]);
 
-      // Calculate the total sum of all expenses
-      const totalSum = expenseData.reduce((acc, item) => acc + item.totalAmount, 0);
+  useEffect(() => {
+    // Calculate the total sum of all expenses
+    const totalSum = expenseData.reduce((acc, item) => acc + item.totalAmount, 0);
 
-      // Calculate the percentage for each category
-      const newData = [["Expense Type", "Percentage"]];
-      expenseData.forEach((item) => {
-        const percentage = ((item.totalAmount / totalSum) * 100).toFixed(2);
-        newData.push([item.categoryName, parseFloat(percentage)]);
-      });
-  
-      // Update the state with the new data
-      setData(newData);
-  
+    // Calculate the percentage for each category
+    const newData = [["Expense Type", "Percentage"]];
+    expenseData.forEach((item) => {
+      const percentage = ((item.totalAmount / totalSum) * 100).toFixed(2);
+      newData.push([item.categoryName, parseFloat(percentage)]);
+    });
+
+    // Update the state with the new data
+    setData(newData);
+  }, [expenseData]);
 
 
 
