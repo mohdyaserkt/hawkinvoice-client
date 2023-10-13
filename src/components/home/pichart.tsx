@@ -3,15 +3,50 @@ import React, { useEffect, useState } from "react";
 import { Chart } from "react-google-charts";
 
 const ExpensePieChart = () => {
+
+
+
+
+
+
+
+
+  useEffect(() => {
+    handleGetExpenseChartData()
+      .then(({ data }: any) => {
+        setexpenseData(data.expenseChartData);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, []);
+
+  
   const [data, setData] = useState([
     ["Expense Type", "Percentage"],
-    ["Labor", 40.44],
-    ["Travel Expense", 20.12],
-    ["Rent Expense", 20.12],
-    ["Materials", 19.32],
   ]);
 
   const [expenseData, setexpenseData] = useState<any[]>([]);
+
+      // Calculate the total sum of all expenses
+      const totalSum = expenseData.reduce((acc, item) => acc + item.totalAmount, 0);
+
+      // Calculate the percentage for each category
+      const newData = [["Expense Type", "Percentage"]];
+      expenseData.forEach((item) => {
+        const percentage = ((item.totalAmount / totalSum) * 100).toFixed(2);
+        newData.push([item.categoryName, parseFloat(percentage)]);
+      });
+  
+      // Update the state with the new data
+      setData(newData);
+  
+
+
+
+
+
   const options = {
     // title: "Expense Breakdown",
     backgroundColor: "#143230",
@@ -26,16 +61,7 @@ const ExpensePieChart = () => {
     },
   };
 
-  useEffect(() => {
-    handleGetExpenseChartData()
-      .then(({ data }: any) => {
-        setexpenseData(data.expenseChartData);
-      })
-      .catch((err) => {
-        console.log(err);
-        alert(err);
-      });
-  }, []);
+ 
 
   return (
     <div>
