@@ -40,11 +40,11 @@ const ExpenseDetails = () => {
 
   const printableRef = useRef<HTMLDivElement | null>(null);
 
-  const printDiv = () => {
+  const printDiv = (data: any[]) => {
     const content = printableRef.current;
   
     if (content) {
-      const printWindow = window.open("", "", "");
+      const printWindow = window.open("", "", "width=1080,height=600");
   
       // Write the content of the target div and include the Tailwind CSS stylesheet
       printWindow?.document.open();
@@ -56,7 +56,48 @@ const ExpenseDetails = () => {
             <!-- Include any other stylesheets your page may require -->
           </head>
           <body>
-            ${content.innerHTML}
+            <div class="w-full flex flex-col gap-10 h-screen overflow-y-auto printable-content">
+              <div class="w-full text-white flex justify-center printable-heading">
+                <div class="text-center">
+                  <h1 class="text-[17px] mb-1">organisation name</h1>
+                  <h1 class="text-[22px]"> Expense Details By Category</h1>
+                  <h1 class="text-[13px]">From 01/04/2023 To 31/03/2024</h1>
+                </div>
+              </div>
+  
+              <div class="w-full px-3">
+                <table class="w-full border-t border-x border-white printable-table">
+                  <thead class="bg-secondary text-xs font-normal">
+                    <tr>
+                      <th class="border-b border-white p-2 text-center">
+                        STATUS
+                      </th>
+                      <th class="border-b border-white p-2 text-center">
+                        EXPENSE COUNT
+                      </th>
+                      <th class="border-b border-white p-2 text-center">
+                        CATEGORY NAME
+                      </th>
+                      <th class="border-b border-white p-2 text-center">
+                        TOTAL AMOUNT
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-white text-sm">
+                    ${data.map((item: { status: any; expenseCount: any; categoryName: any; totalAmount: number; }) => `
+                      <tr class="border-b border-white">
+                        <td class="p-2 text-center text-gray-600">
+                          ${item.status}
+                        </td>
+                        <td class="p-2 text-center">${item.expenseCount}</td>
+                        <td class="p-2 text-center">${item.categoryName}</td>
+                        <td class="p-2 text-center">₹ ${item.totalAmount.toFixed(2)}</td>
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </body>
         </html>
       `);
@@ -64,11 +105,9 @@ const ExpenseDetails = () => {
   
       // Trigger the print operation in the new window
       printWindow?.print();
-      // printWindow?.onafterprint = function () {
-      //   printWindow?.close(); // Close the new window after printing
-      // };
     }
   };
+  
   
   return (
     <>
@@ -159,7 +198,7 @@ const ExpenseDetails = () => {
                 </p>
               </div>
               <div className="flex items-center gap-3">
-                <div onClick={printDiv} className="flex gap-1 border rounded-md text-secondary border-secondary p-1">
+                <div onClick={()=>printDiv(expenseDetails)} className="flex gap-1 border rounded-md text-secondary border-secondary p-1">
                   <p>Print</p>
                   <AiOutlinePrinter className="w-6 h-6 text-secondary " />
                 </div>
