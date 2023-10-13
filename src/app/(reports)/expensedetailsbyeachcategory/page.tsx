@@ -42,16 +42,18 @@ const ExpenseDetails = () => {
 
   const printDiv = () => {
     const content = printableRef.current;
-
+  
     if (content) {
       const printWindow = window.open("", "", "width=1080,height=600");
-
-      // Write the content of the target div into the new window
+  
+      // Write the content of the target div and include the Tailwind CSS stylesheet
       printWindow?.document.open();
       printWindow?.document.write(`
         <html>
           <head>
             <title>Print</title>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+            <!-- Include any other stylesheets your page may require -->
           </head>
           <body>
             ${content.innerHTML}
@@ -59,7 +61,7 @@ const ExpenseDetails = () => {
         </html>
       `);
       printWindow?.document.close();
-
+  
       // Trigger the print operation in the new window
       printWindow?.print();
       // printWindow?.onafterprint = function () {
@@ -67,6 +69,7 @@ const ExpenseDetails = () => {
       // };
     }
   };
+  
   return (
     <>
       <div className="h-screen">
