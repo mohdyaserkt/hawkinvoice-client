@@ -8,9 +8,9 @@
 
 ## 🖥 Backend
 
-The frontend application for HawkInvoice is built with Next.js.
+The backend application for HawkInvoice is built with Node.js using a microservices architecture.
 
-- **Repository**: [Frontend Repo](https://github.com/mohdyaserkt/hawkinvoice-microservices)
+- **Repository**: [Backend Repo](https://github.com/mohdyaserkt/hawkinvoice-microservices)
 
 ## 🧱 System Architecture
 
