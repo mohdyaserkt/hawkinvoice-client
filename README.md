@@ -1,3 +1,42 @@
+
+
+# 🚀 HawkInvoice - Multi-tenant SaaS for Invoice Management
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/your-org/hawkinvoice/ci-cd.yml?branch=main)](https://github.com/your-org/hawkinvoice/actions)
+[![codecov](https://codecov.io/gh/your-org/hawkinvoice/branch/main/graph/badge.svg)](https://codecov.io/gh/your-org/hawkinvoice)
+
+## 🖥 Backend
+
+The frontend application for HawkInvoice is built with Next.js.
+
+- **Repository**: [Frontend Repo](https://github.com/mohdyaserkt/hawkinvoice-microservices)
+
+## 🧱 System Architecture
+
+Below is a high-level overview of the HawkInvoice architecture.
+
+![HawkInvoice Architecture Sketch](assets/system.png)
+
+
+## 📋 Overview
+
+HawkInvoice is a scalable, cloud-native SaaS platform designed to streamline invoice management, financial tracking, and business operations for organizations of all sizes. Built with a microservices architecture, it ensures high scalability, maintainability, and performance while adhering to Clean Architecture and SOLID principles.
+
+
+## 🌟 Features
+
+- **Multi-tenant Architecture**: Secure isolation between different organizations
+- **Invoice Lifecycle Management**: Create, send, track, and manage invoices
+- **Customer Management**: Centralized customer database with interaction history
+- **Organization Management**: Manage multiple organizations under a single account
+- **Role-based Access Control**: Fine-grained permissions system
+- **RESTful & gRPC APIs**: For seamless integration with other systems
+- **Containerized Deployment**: Using Docker and Kubernetes
+- **CI/CD Pipeline**: Automated testing and deployment
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
